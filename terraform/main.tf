@@ -135,7 +135,8 @@ resource "aws_instance" "web" {
               REPO=${var.ecr_repo_url}
 
               aws ecr get-login-password --region $REGION | docker login --username AWS --password-stdin $REPO
-              docker pull $REPO
+              docker pull --pull always $REPO
+
 
               # Stop existing container if any
               if [ $(docker ps -q -f name=college-website) ]; then
