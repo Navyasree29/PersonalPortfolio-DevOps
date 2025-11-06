@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "Navya-Portfoliowebsite"
+        IMAGE_NAME = "navya-portfoliowebsite"
         ECR_REPO   = "390776111022.dkr.ecr.ap-south-1.amazonaws.com/capstone-app"
         REGION     = "ap-south-1"
         AWS_CLI    = "C:\\Program Files\\Amazon\\AWSCLIV2\\aws.exe"
