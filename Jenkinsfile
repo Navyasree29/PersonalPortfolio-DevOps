@@ -27,7 +27,7 @@ pipeline {
         stage('Push to AWS ECR') {
             steps {
                 echo '🚀 Pushing image to AWS ECR...'
-                withCredentials([usernamePassword(credentialsId: 'AWS_ACCOUNT_ID_SECRET', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+                withCredentials([usernamePassword(credentialsId: 'AWS_ECR_CREDS', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                     bat """
                     set AWS_ACCESS_KEY_ID=%AWS_ACCESS_KEY_ID%
                     set AWS_SECRET_ACCESS_KEY=%AWS_SECRET_ACCESS_KEY%
