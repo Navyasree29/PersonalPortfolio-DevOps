@@ -43,7 +43,7 @@ pipeline {
             steps {
                 echo '🏗️ Deploying EC2 instance and running Docker container...'
                 // Use AWS plugin credentials here
-                withAWS(credentials: '390776111022', region: '%REGION%') {
+                withAWS(credentials: 'AWS_ECR_CREDS', region: '%REGION%') {
                     dir('terraform') {
                         bat """
                         "%TERRAFORM%" init
